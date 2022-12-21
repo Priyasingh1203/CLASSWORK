@@ -1,0 +1,48 @@
+package oops;
+
+import java.util.Scanner;
+
+class Student1
+{
+	int id;
+	String name;
+	long phno;
+	static String clgname="NIT";//static variable
+	//static block
+	static
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the college name: ");
+		clgname=sc.nextLine();
+	}
+	//static method
+	static void changeCollege()
+	{
+		clgname="SVU";
+	}
+	Student1(int i,String n,long p)
+	{
+		id=i;
+		name=n;
+		phno=p;
+	}
+	public void display()
+	{
+		System.out.println("id: "+id+"\n"+"name: "+name+"\n"+"phno: "+phno+"\n"+"College: "+clgname);
+	}
+	}
+public class StaticMethodDemo {
+
+	public static void main(String[] args) {
+	
+		Student1 s1=new Student1(1,"Priya",754784210);
+		s1.display();
+		
+		Student1.changeCollege();
+		Student1 s2=new Student1(2,"Singh",847547210);
+		s2.display();
+		
+
+	}
+
+}
